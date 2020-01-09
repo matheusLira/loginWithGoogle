@@ -17,6 +17,9 @@ const globalMiddleware = [
   'App/Middleware/ConvertEmptyStringsToNull'
 ]
 
+Server
+  .use(['Adonis/Middleware/Cors'])
+
 /*
 |--------------------------------------------------------------------------
 | Named Middleware

@@ -1,11 +1,13 @@
 import React from 'react';
-import logo from './assets/images/logo.svg';
+// import logo from './assets/images/logo.svg';
 import './App.scss';
+import axios from 'axios';
 
 function App() {
 
-	function authenticate () {
-		console.log("Chamando autenticação")
+	async function authenticate () {
+		let response = await axios.get('http://127.0.0.1:3333/auth/google')
+        console.log("TCL: authenticate -> response", response)
 	}
 
 	return (
@@ -14,10 +16,10 @@ function App() {
 				<p>
 					Aperte o botão para autenticar.
 				</p>
-				<button value="teste!" onClick={() => authenticate()}>Click me!</button>
-				
+				<button className="btn-teste" value="teste!" onClick={() => authenticate()}>Click me!</button>
 			</header>
 		</div>
+		
 	);
 }
 
